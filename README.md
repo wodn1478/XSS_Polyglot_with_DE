@@ -30,7 +30,50 @@ To get started with the project, clone the repository and install the necessary 
 ```
 git clone https://github.com/wodn1478/XSS_Polyglot_with_DE.git
 cd XSS_Polyglot_with_DE
-pip install selenium
 
-...
 ```
+Install the required Python libraries:
+
+```
+pip install numpy selenium webdriver-manager requests DateTime
+```
+
+Start the BXSS testbed and ensure that it is reachable at
+`http://localhost:8080` before running the scripts. The scripts rely on this
+server to evaluate generated payloads.
+
+## Usage
+
+The repository includes several helper scripts. In most cases you can simply
+run them with Python:
+
+```bash
+python Differential_Evolution_Polyglot_v1.py
+```
+
+or
+
+```bash
+python Differential_Evolution_Polyglot_v2.py
+```
+
+These scripts will use Selenium to automatically send generated payloads to the
+BXSS testbed and evolve them using the Differential Evolution algorithm. At the
+end of the run a `best_xss_payload_*.txt` file is written containing the
+high‑scoring polyglots.
+
+### Encoding utilities
+
+`StringToCodes.py` converts a given payload to multiple encoded
+representations. Provide the path to a file containing your payload as the first
+argument:
+
+```bash
+python StringToCodes.py payload.txt
+```
+
+### Testing against Public Firing Range
+
+`Gfr_test.py` contains examples of how to automatically test a payload against
+Google's Public Firing Range. The endpoints list in this script can be adjusted
+to experiment with different XSS sinks.
